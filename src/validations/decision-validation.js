@@ -22,6 +22,8 @@ const fieldValidationByType = (value, type, operator) => {
     switch(type) {
         case 'string':
             return value.indexOf(',') === -1;
+        case 'boolean':
+            return /^(true)|(false)$/.test(value);
         case 'number': {
             const re = RegExp('[+-]?([0-9]*[.])?[0-9]+');
             if (re.test(value)) {

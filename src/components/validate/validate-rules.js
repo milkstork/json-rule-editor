@@ -54,6 +54,8 @@ class ValidateRules extends Component {
            const attrProps = attributes.find(attr => attr.name === condition.name);
            if (attrProps.type === 'number') {
             facts[condition.name] = Number(condition.value);
+           } else if (attrProps.type === 'boolean') {
+            facts[condition.name] = JSON.parse(condition.value);
            } else if (condition.value && condition.value.indexOf(',') > -1) {
             facts[condition.name] = condition.value.split(',');
            } else {

@@ -55,7 +55,7 @@ class TreeView extends Component {
         const nodeStyle = TreeStyle(background);
         return(
             <div id="treeWrapper" style={{height: heightStyle}}>
-        <Tree data={this.props.treeData} pathFunc={"step"} orientation="vertical" translate={this.state.axis}
+        <Tree data={this.props.treeData} orientation="vertical" translate={this.state.axis}
         separation={{siblings: 1.4, nonSiblings: 2}} scaleExtent={{min: 0.8, max:1}} zoom={0.9} styles={nodeStyle} onClick={this.handleClick} /></div>);
     }
 }

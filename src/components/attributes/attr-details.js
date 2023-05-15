@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import SweetAlert from 'react-bootstrap-sweetalert';
-import AddAttributes from './add-atrribtues';
+import AddAttributes from './add-attributes';
 import { PanelBox } from '../panel/panel';
 
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import AddAttributes from './add-atrribtues';
+import AddAttributes from './add-attributes';
 import AttributeDetails from './attr-details';
 import ToolBar from '../toolbar/toolbar';
 import Banner from '../panel/banner';

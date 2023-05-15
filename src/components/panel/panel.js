@@ -62,13 +62,13 @@ export const TitlePanel = (props) => {
 
 TitlePanel.defaultProps = {
     children: {},
-    titleClass: '',
+    titleClass: {},
     title: '',
   };
   
 TitlePanel.propTypes = {
     children: PropTypes.any,
-    titleClass: PropTypes.string,
+    titleClass: PropTypes.object,
     title: PropTypes.string,
 };
 

@@ -31,11 +31,11 @@ export const TitleIcon = ({iconClass}) => {
 };
 
 TitleIcon.defaultProps = {
-    iconClass: '',
+    iconClass: null,
 };
 
 TitleIcon.propTypes = {
-    iconClass: PropTypes.string,
+    iconClass: PropTypes.object,
 }
 
 export default PageTitle;

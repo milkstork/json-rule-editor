@@ -163,8 +163,8 @@ class AddDecision extends Component {
             node['name'] = name;
             let factValue = value.trim();
             const attProps = attributes.find(att => att.name === name);
-            if (attProps.type === 'number') {
-                factValue = Number(value.trim());
+            if (attProps.type === 'number' || attProps.type === 'boolean') {
+                factValue = JSON.parse(value.trim());
             }
             let fact = { [operator]: factValue };
             if (path) {
@@ -284,12 +284,12 @@ class AddDecision extends Component {
         const { attributes, addAttribute, addPathflag} = this.state;
         const attributeOptions = attributes.map(attr => attr.name);
         const attribute = addAttribute.name && attributes.find(attr => attr.name === addAttribute.name);
-        const operatorOptions = attribute && operator[attribute.type];
+        const operatorOptions = attribute ? operator[attribute.type] : [];
         const { background } = this.context;
 
         const placeholder = addAttribute.operator === 'contains' || addAttribute.operator === 'doesNotContain' ?
-         PLACEHOLDER['string'] : PLACEHOLDER[attribute.type]
-
+         PLACEHOLDER['string'] : PLACEHOLDER[attribute.type];
+        
         return (<Panel>
             
             <div className={`attributes-header ${background}`}>
